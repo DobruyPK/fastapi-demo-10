@@ -13,6 +13,7 @@ jobs:
             password: ${{ secrets.PSW }}
             script: |
               cd dev;
+              mkdir sd;
               git clone git@github.com:DobruyPK/fastapi-demo-10.git;
               cd fastapi-demo-10
               docker-compose up -d;
