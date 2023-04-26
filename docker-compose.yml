@@ -10,8 +10,6 @@ services:
     command: sh -c 'echo "$$HOSTNAME" && echo $$CONTAINER_ID > /home/admin/dev/fastapi-demo-10/.env && sleep infinity'
     volumes:
       - ./api:/usr/src/api
-    depends_on:
-      - create_names
-env_file:
-  - home/admin/dev/fastapi-demo-10/.env_name
+    env_file:
+      - home/admin/dev/fastapi-demo-10/.env_name
 
