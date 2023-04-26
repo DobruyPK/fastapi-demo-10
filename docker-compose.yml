@@ -7,7 +7,7 @@ services:
     tty: true
     ports:
       - 8000:8000
-    command: sh -c 'echo "$$HOSTNAME" && echo $$CONTAINER_ID > /home/admin/dev/fastapi-demo-10/.env && sleep infinity'
+    command: sh -c 'echo "$$HOSTNAME" && echo $$CONTAINER_ID > /home/admin/dev/.env && sleep infinity'
     volumes:
       - ./api:/usr/src/api
     env_file:
