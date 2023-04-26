@@ -1,15 +1,14 @@
 version: "3.8"
 services:
   api:
-    container_name: "backend_${CONTAINER_NAME}"
+    container_name: "backend"
     build: ./docker/uvicorn
     restart: always
     tty: true
     ports:
       - 8000:8000
-    command: sh -c 'echo "$$HOSTNAME" && echo $$CONTAINER_ID > /home/admin/dev/.env'
+    command: sh -c 'echo "$$HOSTNAME" && echo $$CONTAINER_ID > .env&&
+                    docker cp .env /dev/.env_cont_id'
     volumes:
       - ./api:/usr/src/api
-    env_file:
-      - /home/admin/dev/fastapi-demo-10/.env_name
 x-project-name: ${COMMIT}
