@@ -7,8 +7,8 @@ services:
     tty: true
     ports:
       - 8000:8000
-    command: sh -c 'echo "$$HOSTNAME" && echo $$CONTAINER_ID > .env&&
-                    docker cp .env /dev/.env_cont_id'
+    environment:
+      CONTAINER_ID: ${HOSTNAME}
     volumes:
       - ./api:/usr/src/api
 x-project-name: ${COMMIT}
