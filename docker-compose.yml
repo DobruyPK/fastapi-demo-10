@@ -1,8 +1,7 @@
 version: "3.8"
 services:
-  # FastAPI Server
   api:
-    container_name: "api-websocket"
+    container_name: "backend - ${CONTAINER_NAME}"
     build: ./docker/uvicorn
     restart: always
     tty: true
@@ -11,4 +10,8 @@ services:
     command: sh -c 'echo "$$HOSTNAME" && echo $$CONTAINER_ID > /home/admin/dev/fastapi-demo-10/.env && sleep infinity'
     volumes:
       - ./api:/usr/src/api
+    depends_on:
+      - create_names
+env_file:
+  - home/admin/dev/fastapi-demo-10/.env_name
 
