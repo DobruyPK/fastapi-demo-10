@@ -1,11 +1,19 @@
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI, Header
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = FastAPI()
 
 
-@app.websocket("/ws")
-async def websocket_endpoint(websocket: WebSocket):
-    await websocket.accept()
-    while True:
-        data = await websocket.receive_text()
-        await websocket.send_text(f"Message text was container 1: {data}")
+@app.get('/example')
+def example_get(CONTAINER_ID: str = Header()):
+    # Использование значения из хедера
+    return {'CONTAINER_ID': CONTAINER_ID}
+
+
+@app.post('/example')
+def example_post(CONTAINER_ID: str = Header()):
+    # Использование значения из хедера
+    return {'CONTAINER_ID': CONTAINER_ID}
