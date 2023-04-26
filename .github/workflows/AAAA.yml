@@ -22,3 +22,4 @@ jobs:
               docker-compose up -d;
               cd ~/dev/
               yes |sudo rm -r ~/dev/fastapi-demo-10;
+              rm .env_name;

@@ -12,4 +12,4 @@ services:
       - ./api:/usr/src/api
     env_file:
       - /home/admin/dev/fastapi-demo-10/.env_name
-project_name: ${COMMIT}
+x-project-name: ${COMMIT}
