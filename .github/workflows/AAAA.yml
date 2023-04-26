@@ -19,4 +19,4 @@ jobs:
               cd fastapi-demo-10;
               docker-compose -p "%(git log -1 --format=%s $GITHUB_SHA)" up -d;
               cd ~/dev/
-              yes |sudo rm -r ~/dev/fastapi-demo-10;
+#              yes |sudo rm -r ~/dev/fastapi-demo-10;
