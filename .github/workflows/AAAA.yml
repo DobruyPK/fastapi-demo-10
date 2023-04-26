@@ -14,8 +14,8 @@ jobs:
             password: ${{ secrets.PSW }}
             script: |
               cd dev;
-              sudo echo "COMMIT_NAME=$(date +'%Y_%m_%d_%H_%M_%S')__$(git log -1 --format=%s $GITHUB_SHA)" > /home/admin/dev/.env_name;
               git clone git@github.com:DobruyPK/fastapi-demo-10.git;
+              sudo echo "COMMIT_NAME=$(date +'%Y_%m_%d_%H_%M_%S')__$(git log -1 --format=%s $GITHUB_SHA)" > /home/admin/dev/.env_name;
               cp .env fastapi-demo-10/;
               cp .env_name fastapi-demo-10/
               cd fastapi-demo-10;
