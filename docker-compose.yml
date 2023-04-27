@@ -1,7 +1,6 @@
 version: "3.8"
 services:
   api:
-    container_name: "backend"
     build: ./docker/uvicorn
     restart: always
     tty: true
