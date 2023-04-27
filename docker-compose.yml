@@ -4,11 +4,9 @@ services:
     build: ./docker/uvicorn
     restart: always
     tty: true
-    ports:
-      - 8000:8000
+    expose:
+      - 8000
     environment:
       CONTAINER_ID: ${HOSTNAME}
     volumes:
       - ./api:/usr/src/api
-    expose:
-      - 8000
