@@ -2,7 +2,8 @@ version: "3.8"
 services:
   api:
     build:
-      context: ./docker/uvicorn
+      context: .
+      dockerfile: Dockerfile
       args:
         IMAGE_TAG: ${IMAGE_TAG:-latest}
     restart: always

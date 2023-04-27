@@ -1,7 +1,7 @@
 FROM python:3.8-alpine
 WORKDIR /usr/src/api
-ADD requirements.txt .
-ADD main.py .
+COPY requirements.txt requirements.txt
+COPY main.py main.py
 
 
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
