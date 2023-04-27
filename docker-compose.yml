@@ -1,13 +1,17 @@
 version: "3.8"
 services:
   api:
-    build: ./docker/uvicorn
+    build:
+      context: ./docker/uvicorn
+      args:
+        IMAGE_TAG: ${IMAGE_TAG:-latest}
     restart: always
     tty: true
     expose:
       - 8000
     environment:
       CONTAINER_ID: ${HOSTNAME}
+      IMAGE_TAG: ${IMAGE_TAG:-latest-$(date '+%Y%m%d%H%M%S')}
     volumes:
       - ./api:/usr/src/api
     networks:
