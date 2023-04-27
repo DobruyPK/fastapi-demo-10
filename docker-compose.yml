@@ -10,3 +10,8 @@ services:
       CONTAINER_ID: ${HOSTNAME}
     volumes:
       - ./api:/usr/src/api
+    networks:
+      - my-network
+networks:
+  my-network:
+    external: true
