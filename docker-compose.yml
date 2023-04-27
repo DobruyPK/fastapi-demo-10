@@ -10,4 +10,5 @@ services:
       CONTAINER_ID: ${HOSTNAME}
     volumes:
       - ./api:/usr/src/api
-x-project-name: ${COMMIT}
+    expose:
+      - 8000
