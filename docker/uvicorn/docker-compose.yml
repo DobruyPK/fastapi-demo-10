@@ -2,19 +2,15 @@ version: "3.8"
 services:
   api:
     build:
-      context: ../backend
+      context: ../../backend
       dockerfile: Dockerfile
     restart: always
-    tty: true
     expose:
       - 8000
-    environment:
-      CONTAINER_ID: ${HOSTNAME}
-      IMAGE_TAG: ${IMAGE_TAG:-latest-$(date '+%Y%m%d%H%M%S')}
     volumes:
-      - ./api:/usr/src/api
-    networks:
-      - my-network
-networks:
-  my-network:
-    external: true
+      - ../../backend:/usr/src/api
+#    networks:
+#      - my-network
+#networks:
+#  my-network:
+#    external: true

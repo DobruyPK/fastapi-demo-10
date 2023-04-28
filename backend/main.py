@@ -2,7 +2,6 @@ from fastapi import FastAPI, Header
 from dotenv import load_dotenv
 
 load_dotenv()
-
 app = FastAPI()
 
 
