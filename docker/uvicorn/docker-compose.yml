@@ -9,8 +9,8 @@ services:
       - 8000
     volumes:
       - ../../backend:/usr/src/api
-#    networks:
-#      - my-network
-#networks:
-#  my-network:
-#    external: true
+    networks:
+      - my-network
+networks:
+  my-network:
+    external: true
